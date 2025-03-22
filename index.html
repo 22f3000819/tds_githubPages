@@ -1,2 +1,28 @@
-<h1>Hello TDS Graded Assignment Checking Script!! My email's down there.</h1>
-<!--email_off-->22f3000819@ds.study.iitm.ac.in<!--/email_off-->
+<!--<h1>Hello TDS Graded Assignment Checking Script!! My email's down there.</h1> -->
+<!--email_off--><!--22f3000819@ds.study.iitm.ac.in--><!--/email_off-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Display</title>
+</head>
+<body>
+    <h1>Hello TDS Graded Assignment Checking Script!! My email's down there.</h1>
+    <p id="email-display"></p>
+
+    <script>
+        function getEmailFromQuery() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get("email");
+            if (email) {
+                document.getElementById("email-display").textContent = email;
+            } else {
+                document.getElementById("email-display").textContent = "No email provided.";
+            }
+        }
+
+        window.onload = getEmailFromQuery;
+    </script>
+</body>
+</html>
